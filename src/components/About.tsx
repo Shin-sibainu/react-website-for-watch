@@ -3,7 +3,7 @@ import aboutAnimation from "../assets/animations/aboutAnimation.json";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
-const AboutSection = () => {
+const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: false,
@@ -11,7 +11,7 @@ const AboutSection = () => {
   });
 
   return (
-    <section id="about" className="lg:py-28 py-2">
+    <section id="about" className="lg:py-14 py-2">
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 50 }}
@@ -58,4 +58,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+export default About;

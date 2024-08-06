@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import heroAnimation from "../assets/animations/heroAnimation.json";
 
-const HeroSection = () => {
+const Hero = () => {
   return (
-    <div id="home">
+    <div id="home" className="pb-14">
       <motion.header
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
@@ -29,7 +29,7 @@ const HeroSection = () => {
               <a href="#about">About</a>
             </li>
             <li>
-              <a href="#skills">Skills</a>
+              <a href="#service">Service</a>
             </li>
           </ul>
         </nav>
@@ -73,4 +73,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default Hero;
