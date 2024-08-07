@@ -10,7 +10,7 @@ const Contact = () => {
   });
 
   return (
-    <section ref={ref} className="lg:py-24">
+    <section ref={ref} className="lg:py-24 py-14">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
@@ -18,7 +18,7 @@ const Contact = () => {
         className="text-center space-y-6 lg:max-w-[65rem] mx-auto px-4"
       >
         <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center"
+          className="lg:text-5xl md:text-4xl sm:text-3xl text-2xl lg:leading-[3.5rem] font-bold"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -36,38 +36,38 @@ const Contact = () => {
 
         {/* form section */}
         <div className="">
-          <form className="space-y-6 text-left max-w-[40rem] mx-auto">
+          <form className="space-y-5 text-left max-w-[40rem] mx-auto">
             <div className="mt-4">
               <label htmlFor="title" className="font-medium">
-                タイトル
+                Title
               </label>
               <input
                 type="text"
                 name="title"
-                placeholder="タイトル"
+                placeholder="ex. Web Development Advice"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300"
                 required
               />
             </div>
             <div>
               <label htmlFor="email" className="font-medium">
-                メールアドレス
+                Email
               </label>
               <input
                 type="email"
                 name="email"
-                placeholder="メールアドレス"
+                placeholder="ex. xxxxxxx@gmail.com"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300"
                 required
               />
             </div>
             <div>
               <label htmlFor="email" className="font-medium">
-                内容
+                Content
               </label>
               <textarea
                 name="message"
-                placeholder="メッセージ内容"
+                placeholder="ex. Please help me."
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300 lg:h-[20rem]"
                 required
               ></textarea>
@@ -75,9 +75,9 @@ const Contact = () => {
             <div>
               <button
                 type="submit"
-                className="px-8 py-3 bg-orange-400 text-white font-semibold rounded-md hover:bg-orange-500 transition duration-300"
+                className="border-2 border-gray-300 px-5 py-2 rounded-md hover:border-orange-300 duration-150 transition"
               >
-                送信
+                Send
               </button>
             </div>
           </form>

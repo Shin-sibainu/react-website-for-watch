@@ -96,7 +96,7 @@ const OurMission = () => {
         className="text-center space-y-6 lg:max-w-[65rem] mx-auto px-4"
       >
         <motion.h2
-          className="text-4xl md:text-5xl font-bold text-center"
+          className="lg:text-5xl md:text-4xl sm:text-3xl text-2xl lg:leading-[3.5rem] font-bold"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -142,7 +142,7 @@ const OurMission = () => {
                     }}
                     transition={{ duration: 0.7, delay: index * 0.3 }}
                     key={index}
-                    className="text-left"
+                    className="text-left border-b-4 border-slate-600 pb-2"
                   >
                     <h4 className="font-medium lg:text-2xl">{section.title}</h4>
                     <p>{section.content}</p>

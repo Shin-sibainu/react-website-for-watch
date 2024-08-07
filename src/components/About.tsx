@@ -23,7 +23,7 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="lg:text-5xl text-2xl"
+          className="lg:text-5xl md:text-4xl sm:text-3xl text-2xl lg:leading-[3.5rem] font-bold"
         >
           About Us
         </motion.h2>
