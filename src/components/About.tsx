@@ -31,7 +31,7 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="space-y-6 lg:text-xl text-sm"
+          className="space-y-6 lg:text-xl text-base"
         >
           <p className="lg:leading-8">
             HealthAxon is a UK based organisation which makes investments in

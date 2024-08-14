@@ -68,7 +68,7 @@ const Service = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="lg:text-xl text-sm lg:leading-8"
+          className="lg:text-xl text-base lg:leading-8"
         >
           At HealthAxon, we take a holistic approach to investing, focusing on
           areas that create both social and financial value. Our strategy is
@@ -78,7 +78,7 @@ const Service = () => {
         {/* service card */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
           {services.map((service, index) => (
-            <div>
+            <div key={index}>
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}

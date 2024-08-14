@@ -1,6 +1,7 @@
 import "./App.css";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import OurMission from "./components/OurMission";
@@ -15,7 +16,7 @@ import useSmoothScroll from "./hooks/useSmoothScroll";
 
 function App() {
   const scrollRef = useSmoothScroll();
-
+  // bg-[#f0efed]
   return (
     <div ref={scrollRef} className="bg-[#f0efed]" data-scroll-container>
       <div className="container mx-auto py-4 space-y-6 px-3">
@@ -25,6 +26,7 @@ function App() {
         <Service />
         <OurMission />
         <Contact />
+        <Footer />
       </div>
     </div>
   );

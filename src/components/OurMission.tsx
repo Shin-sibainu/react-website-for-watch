@@ -26,9 +26,9 @@ const OurMission = () => {
   // const [allowMainScroll, setAllowMainScroll] = useState(true);
 
   const mainRef = useRef(null);
-  const triggerRef = useRef<HTMLDivElement>(null);
-  const scrollableRef = useRef<HTMLDivElement>(null);
-  const sectionsRef = useRef<HTMLDivElement>(null);
+  // const triggerRef = useRef<HTMLDivElement>(null);
+  // const scrollableRef = useRef<HTMLDivElement>(null);
+  // const sectionsRef = useRef<HTMLDivElement>(null);
 
   const isInView = useInView(mainRef, {
     once: false,
@@ -108,14 +108,14 @@ const OurMission = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="lg:text-xl text-sm lg:leading-8"
+          className="lg:text-xl text-base lg:leading-8"
         >
           At React Website, we take a holistic approach to investing, focusing
           on areas that create both social and financial value. Our strategy is
           built on three key pillars:
         </motion.p>
 
-        <div ref={triggerRef} className="lg:pt-6">
+        <div className="lg:pt-6">
           <div className="md:flex gap-5">
             <motion.div
               initial={{ opacity: 0, x: -150 }}
@@ -129,10 +129,9 @@ const OurMission = () => {
               initial={{ opacity: 0, x: 150 }}
               animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 150 }}
               transition={{ duration: 0.7, delay: 0.5 }}
-              ref={scrollableRef}
             >
               {/* scroll area */}
-              <div ref={sectionsRef} className="space-y-28">
+              <div className="space-y-28">
                 {sections.map((section, index) => (
                   <motion.div
                     initial={{ opacity: 0, x: 150 }}
@@ -142,7 +141,7 @@ const OurMission = () => {
                     }}
                     transition={{ duration: 0.7, delay: index * 0.3 }}
                     key={index}
-                    className="text-left border-b-4 border-slate-600 pb-2"
+                    className="text-left border-b-2 border-slate-500 pb-4"
                   >
                     <h4 className="font-medium lg:text-2xl">{section.title}</h4>
                     <p>{section.content}</p>

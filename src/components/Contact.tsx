@@ -75,7 +75,7 @@ const Contact = () => {
             <div>
               <button
                 type="submit"
-                className="border-2 border-gray-300 px-5 py-2 rounded-md hover:border-orange-300 duration-150 transition"
+                className="border-2 border-gray-500 px-5 py-2 rounded-md hover:border-orange-300 duration-150 transition"
               >
                 Send
               </button>

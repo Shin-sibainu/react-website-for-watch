@@ -32,6 +32,7 @@ const Hero = () => {
               stiffness: 150,
               damping: 15,
             }}
+            className="md:w-[840px] -z-10"
           >
             <Lottie animationData={heroAnimation} />
           </motion.div>
