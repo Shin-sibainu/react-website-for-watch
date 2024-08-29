@@ -10,7 +10,7 @@ const Contact = () => {
   });
 
   return (
-    <section ref={ref} className="lg:py-24 py-14">
+    <section id="contact" ref={ref} className="lg:py-14 py-2">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}

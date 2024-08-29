@@ -34,15 +34,18 @@ const About = () => {
           className="space-y-6 lg:text-xl text-base"
         >
           <p className="lg:leading-8">
-            HealthAxon is a UK based organisation which makes investments in
-            happiness. We quantify both social and financial returns generated
-            by our holdings, with a portfolio made up of sustainable Health and
-            Social Care services. Our clients include Local Authorities, the NHS
-            and private individuals.
+            Hey there! 👋 We just launched our awesome new site built entirely
+            with ReactWebsite. Can you believe it? Our team poured their heart
+            (and a lot of coffee ☕) into crafting this sleek, responsive
+            masterpiece. From snappy page loads to buttery-smooth animations,
+            we're pretty proud of how it turned out!
           </p>
           <p>
-            We think holistically about returns and believe in creating durable,
-            scalable impact based on our values whilst aligning stakeholders.
+            But it's not just about looking pretty (though we think it does 😉).
+            This bad boy is packed with React goodness - reusable components,
+            efficient state management, and all the hooks you could shake a
+            stick at. Plus, it's so easy to update, even our office plant could
+            probably do it (if it had thumbs).
           </p>
         </motion.div>
         <motion.div

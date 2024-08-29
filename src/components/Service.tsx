@@ -70,9 +70,10 @@ const Service = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="lg:text-xl text-base lg:leading-8"
         >
-          At HealthAxon, we take a holistic approach to investing, focusing on
-          areas that create both social and financial value. Our strategy is
-          built on three key pillars:
+          At ReactWebsite Wizards, we take a holistic approach to web
+          development, focusing on creating both stunning visuals and smooth
+          functionality. Our magical React recipe is built on three key
+          ingredients:
         </motion.p>
 
         {/* service card */}

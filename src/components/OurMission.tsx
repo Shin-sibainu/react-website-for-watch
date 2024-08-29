@@ -5,90 +5,35 @@ import ourMissionAnimation from "../assets/animations/ourMission.json";
 
 const sections = [
   {
-    title: "Growth Web Trend",
+    title: "Lightning-Fast Performance",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, recusandae?",
+      "Experience the speed of light with ReactWebsite! Our optimized components and efficient rendering ensure your visitors won't be left waiting. Say goodbye to sluggish load times!",
   },
   {
-    title: "Growth Web Trend",
+    title: "Responsive Design Magic",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, recusandae?",
+      "Watch your site transform like a chameleon across devices! ReactWebsite's fluid layouts and adaptive components ensure a pixel-perfect experience from smartphones to ultrawide monitors.",
   },
   {
-    title: "Growth Web Trend",
+    title: "Easy-Peasy Updates",
     content:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, recusandae?",
+      "Updating your site is now as easy as ordering pizza! With ReactWebsite's intuitive interface and reusable components, you can make changes faster than you can say 'React hooks'!",
   },
 ];
-
 const OurMission = () => {
-  // const [isScrollingInside, setIsScrollingInside] = useState(false);
-  // const [allowMainScroll, setAllowMainScroll] = useState(true);
-
   const mainRef = useRef(null);
-  // const triggerRef = useRef<HTMLDivElement>(null);
-  // const scrollableRef = useRef<HTMLDivElement>(null);
-  // const sectionsRef = useRef<HTMLDivElement>(null);
 
   const isInView = useInView(mainRef, {
     once: false,
     amount: 0.3,
   });
 
-  // useEffect(() => {
-  //   const triggerElement = triggerRef.current!;
-
-  //   //右側のスクロールする要素
-  //   const scrollableElement = scrollableRef.current!;
-
-  //   const handleScroll = () => {
-  //     //スクロール位置(量)の取得
-  //     const scrollTop =
-  //       window.pageYOffset || document.documentElement.scrollTop;
-
-  //     //トリガー位置
-  //     const triggerPosition =
-  //       triggerElement?.getBoundingClientRect().top + window.scrollY * 0.86;
-
-  //     // トリガー位置よりもスクロール位置が来たら発火
-  //     if (scrollTop >= triggerPosition && !isScrollingInside) {
-  //       console.log("内部スクロールモードに切り替え");
-  //       setIsScrollingInside(true);
-  //       setAllowMainScroll(false);
-  //       window.scrollTo({ top: triggerPosition, behavior: "smooth" });
-  //       document.body.style.overflow = "hidden";
-
-  //       scrollableElement.focus(); // 内部要素にフォーカスを移す
-  //     } else if (scrollTop < triggerPosition && isScrollingInside) {
-  //       console.log("通常スクロールモードに戻る");
-  //       setIsScrollingInside(false);
-  //       setAllowMainScroll(true);
-  //       document.body.style.overflow = "";
-  //     }
-  //   };
-
-  //   const handleScrollableScroll = () => {
-  //     if (
-  //       scrollableElement.scrollTop + scrollableElement.clientHeight >=
-  //       scrollableElement.scrollHeight - 20
-  //     ) {
-  //       setIsScrollingInside(false);
-  //       setAllowMainScroll(true);
-  //       document.body.style.overflow = "";
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   scrollableElement.addEventListener("scroll", handleScrollableScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //     scrollableElement.removeEventListener("scroll", handleScrollableScroll);
-  //   };
-  // }, [isScrollingInside, allowMainScroll]);
-
   return (
-    <section ref={mainRef} className="lg:py-28">
+    <section
+      id="ourmission"
+      ref={mainRef}
+      className="lg:py-14 py-2 overflow-hidden"
+    >
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
@@ -116,11 +61,12 @@ const OurMission = () => {
         </motion.p>
 
         <div className="lg:pt-6">
-          <div className="md:flex gap-5">
+          <div className="lg:flex gap-5">
             <motion.div
               initial={{ opacity: 0, x: -150 }}
               animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : -150 }}
               transition={{ duration: 0.7, delay: 0.5 }}
+              className="lg:w-1/2"
             >
               <Lottie animationData={ourMissionAnimation} />
             </motion.div>
@@ -129,6 +75,7 @@ const OurMission = () => {
               initial={{ opacity: 0, x: 150 }}
               animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : 150 }}
               transition={{ duration: 0.7, delay: 0.5 }}
+              className="lg:w-1/2"
             >
               {/* scroll area */}
               <div className="space-y-28">
@@ -141,9 +88,11 @@ const OurMission = () => {
                     }}
                     transition={{ duration: 0.7, delay: index * 0.3 }}
                     key={index}
-                    className="text-left border-b-2 border-slate-500 pb-4"
+                    className="text-left border-b-2 border-slate-500 pb-2"
                   >
-                    <h4 className="font-medium lg:text-2xl">{section.title}</h4>
+                    <h4 className="font-medium lg:text-2xl mb-2">
+                      {section.title}
+                    </h4>
                     <p>{section.content}</p>
                   </motion.div>
                 ))}

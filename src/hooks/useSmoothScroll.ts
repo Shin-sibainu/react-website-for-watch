@@ -17,38 +17,15 @@ export default function useSmoothScroll() {
       });
     }
 
-    // locomotiveScroll.on("scroll", (instance) => {
-    //   const sections = document.querySelectorAll("[data-scroll-section]");
-    //   let closestSection = null;
-    //   let minDistance = Infinity;
-
-    //   sections.forEach((section) => {
-    //     const rect = section.getBoundingClientRect();
-    //     const distance = Math.abs(rect.top);
-    //     if (distance < minDistance) {
-    //       minDistance = distance;
-    //       closestSection = section;
-    //     }
-    //   });
-
-    //   if (closestSection && !locomotiveScroll.isBusy) {
-    //     locomotiveScroll.scrollTo(closestSection, {
-    //       offset: 0,
-    //       duration: 500,
-    //       disableLerp: true,
-    //     });
-    //   }
+    // const resizeObserver = new ResizeObserver(() => {
+    //   locomotiveScroll.update();
     // });
 
-    const resizeObserver = new ResizeObserver(() => {
-      locomotiveScroll.update();
-    });
+    // if (scrollRef.current) {
+    //   resizeObserver.observe(scrollRef.current);
+    // }
 
-    if (scrollRef.current) {
-      resizeObserver.observe(scrollRef.current);
-    }
-
-    window.addEventListener("resize", () => locomotiveScroll.update());
+    // window.addEventListener("resize", () => locomotiveScroll.update());
 
     setTimeout(() => {
       locomotiveScroll.update();

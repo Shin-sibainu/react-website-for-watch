@@ -35,12 +35,18 @@ const Header = () => {
           <li>
             <a href="#service">Service</a>
           </li>
+          <li>
+            <a href="#ourmission">Our Mission</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
       </nav>
 
       {/* hamburger menu button */}
       <button
-        className="sm:hidden flex flex-col justify-center items-center gap-1 z-50"
+        className="md:hidden flex flex-col justify-center items-center gap-1 z-50"
         onClick={toggleMenu}
       >
         <span
@@ -62,8 +68,8 @@ const Header = () => {
 
       {/* mobile menu */}
       <div
-        className={`absolute top-0 right-0 w-4/5 bg-slate-100 shadow-md transition-all duration-300 ease-in-out z-30 ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-0 right-0 w-4/5 bg-slate-100 shadow-md transition-all duration-300 ease-in-out z-30 ${
+          isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"
         }`}
       >
         <nav className="h-screen flex items-center justify-center">
@@ -121,11 +127,11 @@ const Header = () => {
               }`}
             >
               <a
-                href="#service"
+                href="#ourmission"
                 className="block py-2 hover:bg-gray-100 text-3xl font-medium"
                 onClick={toggleMenu}
               >
-                Our People
+                Our Mission
               </a>
             </li>
             <li
@@ -136,7 +142,7 @@ const Header = () => {
               }`}
             >
               <a
-                href="#service"
+                href="#contact"
                 className="block py-2 hover:bg-gray-100 text-3xl font-medium"
                 onClick={toggleMenu}
               >

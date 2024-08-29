@@ -4,7 +4,7 @@ import heroAnimation from "../assets/animations/heroAnimation.json";
 
 const Hero = () => {
   return (
-    <div id="home" className="pb-14">
+    <div id="home" className="pb-2">
       <main className="flex flex-col flex-1 items-center">
         <div className="lg:py-14 py-10 max-w-[50rem] text-center">
           <motion.h2
@@ -19,7 +19,7 @@ const Hero = () => {
             }}
             className="lg:text-5xl md:text-4xl sm:text-3xl text-2xl lg:leading-[3.5rem]"
           >
-            We make high impact investments that transform lives
+            With React, we're coding the future of interactive web solutions
           </motion.h2>
 
           <motion.div
