@@ -20,6 +20,7 @@ const sections = [
       "Updating your site is now as easy as ordering pizza! With ReactWebsite's intuitive interface and reusable components, you can make changes faster than you can say 'React hooks'!",
   },
 ];
+
 const OurMission = () => {
   const mainRef = useRef(null);
 
