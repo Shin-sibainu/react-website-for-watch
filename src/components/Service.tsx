@@ -1,5 +1,5 @@
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
+import SectionLayout from "./layout/SectionLayout";
 
 const services = [
   {
@@ -41,42 +41,14 @@ const services = [
 ];
 
 const Service = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, {
-    once: false,
-    amount: 0.3,
-  });
-
   return (
-    <section id="service" className="lg:py-14 py-2">
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="text-center space-y-6 lg:max-w-[65rem] mx-auto px-4"
-      >
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="lg:text-5xl md:text-4xl sm:text-3xl text-2xl lg:leading-[3.5rem] font-bold"
-        >
-          Service
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="lg:text-xl text-base lg:leading-8"
-        >
-          At ReactWebsite Wizards, we take a holistic approach to web
-          development, focusing on creating both stunning visuals and smooth
-          functionality. Our magical React recipe is built on three key
-          ingredients:
-        </motion.p>
-
-        {/* service card */}
+    <SectionLayout
+      id="service"
+      title="Service"
+      description="At ReactWebsite Wizards, we take a holistic approach to web development, focusing on creating both stunning visuals and smooth functionality. Our magical React recipe is built on three key ingredients:"
+    >
+      {/* service card */}
+      {({ isInView }) => (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
           {services.map((service, index) => (
             <div key={index}>
@@ -100,8 +72,8 @@ const Service = () => {
             </div>
           ))}
         </div>
-      </motion.div>
-    </section>
+      )}
+    </SectionLayout>
   );
 };
 
