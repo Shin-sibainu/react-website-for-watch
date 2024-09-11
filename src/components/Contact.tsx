@@ -1,13 +1,21 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const Contact = () => {
-  const ref = useRef(null);
+  const [inputTitle, setInputTitle] = useState("");
+  const [inputEmail, setInputEmail] = useState("");
+  const [inputContent, setInputContent] = useState("");
 
+  const ref = useRef(null);
   const isInView = useInView(ref, {
     once: false,
     amount: 0.3,
   });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log({ inputTitle, inputEmail, inputContent });
+  };
 
   return (
     <section id="contact" ref={ref} className="lg:py-14 py-2">
@@ -36,7 +44,10 @@ const Contact = () => {
 
         {/* form section */}
         <div className="">
-          <form className="space-y-5 text-left max-w-[40rem] mx-auto">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-5 text-left max-w-[40rem] mx-auto"
+          >
             <div className="mt-4">
               <label htmlFor="title" className="font-medium">
                 Title
@@ -47,6 +58,7 @@ const Contact = () => {
                 placeholder="ex. Web Development Advice"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300"
                 required
+                onChange={(e) => setInputTitle(e.target.value)}
               />
             </div>
             <div>
@@ -59,6 +71,7 @@ const Contact = () => {
                 placeholder="ex. xxxxxxx@gmail.com"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300"
                 required
+                onChange={(e) => setInputEmail(e.target.value)}
               />
             </div>
             <div>
@@ -70,6 +83,7 @@ const Contact = () => {
                 placeholder="ex. Please help me."
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300 lg:h-[20rem]"
                 required
+                onChange={(e) => setInputContent(e.target.value)}
               ></textarea>
             </div>
             <div>
