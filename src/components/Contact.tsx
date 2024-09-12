@@ -1,10 +1,13 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import emailJs from "@emailjs/browser";
 
 const Contact = () => {
   const [inputTitle, setInputTitle] = useState("");
   const [inputEmail, setInputEmail] = useState("");
   const [inputContent, setInputContent] = useState("");
+
+  const form = useRef<HTMLFormElement>(null);
 
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -14,7 +17,30 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ inputTitle, inputEmail, inputContent });
+    // console.log({ inputTitle, inputEmail, inputContent });
+
+    // メール送信機能
+    if (form.current) {
+      emailJs
+        .sendForm(
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          form.current,
+          {
+            publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+          }
+        )
+        .then(
+          () => {
+            console.log("SUCCESS");
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+          }
+        );
+    } else {
+      console.error("Form is not available");
+    }
   };
 
   return (
@@ -45,6 +71,7 @@ const Contact = () => {
         {/* form section */}
         <div className="">
           <form
+            ref={form}
             onSubmit={handleSubmit}
             className="space-y-5 text-left max-w-[40rem] mx-auto"
           >
@@ -81,7 +108,7 @@ const Contact = () => {
               <textarea
                 name="message"
                 placeholder="ex. Please help me."
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300 lg:h-[20rem]"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300 h-[20rem]"
                 required
                 onChange={(e) => setInputContent(e.target.value)}
               ></textarea>
