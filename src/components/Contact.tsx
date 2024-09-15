@@ -6,6 +6,8 @@ const Contact = () => {
   const [inputTitle, setInputTitle] = useState("");
   const [inputEmail, setInputEmail] = useState("");
   const [inputContent, setInputContent] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const form = useRef<HTMLFormElement>(null);
 
@@ -17,28 +19,43 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // console.log({ inputTitle, inputEmail, inputContent });
+    setIsLoading(true);
+    setError("");
 
-    // メール送信機能
+    // console.log({ inputTitle, inputEmail, inputContent });
+    if (
+      inputTitle.trim() === "" ||
+      inputEmail.trim() === "" ||
+      inputContent.trim() === ""
+    ) {
+      setError("※全ての項目を入力してください。");
+      setIsLoading(false);
+      return;
+    }
+
     if (form.current) {
-      emailJs
-        .sendForm(
+      try {
+        // メール送信機能
+        await emailJs.sendForm(
           import.meta.env.VITE_EMAILJS_SERVICE_ID,
           import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
           form.current,
           {
             publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
           }
-        )
-        .then(
-          () => {
-            console.log("SUCCESS");
-          },
-          (error) => {
-            console.log("FAILED...", error.text);
-          }
         );
+
+        console.log("SUCCESS");
+        alert("メールを送信しました🚀");
+      } catch (error) {
+        console.error("FAILED...", error);
+        setError("メール送信に失敗しました。もう一度お試しください。");
+      } finally {
+        setIsLoading(false);
+      }
     } else {
+      setIsLoading(false);
+      setError("フォームが利用できません");
       console.error("Form is not available");
     }
   };
@@ -84,7 +101,6 @@ const Contact = () => {
                 name="title"
                 placeholder="ex. Web Development Advice"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300"
-                required
                 onChange={(e) => setInputTitle(e.target.value)}
               />
             </div>
@@ -97,7 +113,6 @@ const Contact = () => {
                 name="email"
                 placeholder="ex. xxxxxxx@gmail.com"
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300"
-                required
                 onChange={(e) => setInputEmail(e.target.value)}
               />
             </div>
@@ -109,14 +124,17 @@ const Contact = () => {
                 name="message"
                 placeholder="ex. Please help me."
                 className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300 h-[20rem]"
-                required
                 onChange={(e) => setInputContent(e.target.value)}
               ></textarea>
             </div>
+            {error && (
+              <span className="text-red-500 font-semibold">{error}</span>
+            )}
             <div>
               <button
                 type="submit"
                 className="border-2 border-gray-500 px-5 py-2 rounded-md hover:border-orange-300 duration-150 transition"
+                disabled={isLoading}
               >
                 Send
               </button>

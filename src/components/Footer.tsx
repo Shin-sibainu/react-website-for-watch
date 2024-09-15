@@ -17,7 +17,7 @@ const Footer = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="container mx-auto px-4"
       >
-        <div className="flex flex-wrap justify-between">
+        <div className="md:flex justify-between">
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
             <h3 className="text-lg font-semibold mb-2">React Website</h3>
             <p className="text-sm">
@@ -47,7 +47,6 @@ const Footer = () => {
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
             <h4 className="text-md font-semibold mb-2">Contact Us</h4>
             <p className="text-sm mb-1">123 Investment Street</p>
-            <p className="text-sm mb-1">Financial District, NY 10001</p>
             <p className="text-sm mb-1">Email: info@reactwebsite.com</p>
             <p className="text-sm">Phone: (123) 456-7890</p>
           </div>
