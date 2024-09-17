@@ -6,37 +6,37 @@ const services = [
     title: "Speed",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, recusandae?",
-    url: "/src/assets/gif/rocket.gif",
+    url: "/gif/rocket.gif",
   },
   {
     title: "Save Money",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, recusandae?",
-    url: "/src/assets/gif/save-money.gif",
+    url: "/gif/save-money.gif",
   },
   {
     title: "Support",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, recusandae?",
-    url: "/src/assets/gif/tech-support.gif",
+    url: "/gif/tech-support.gif",
   },
   {
     title: "PC Design",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, recusandae?",
-    url: "/src/assets/gif/laptop.gif",
+    url: "/gif/laptop.gif",
   },
   {
     title: "Security",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, recusandae?",
-    url: "/src/assets/gif/shield.gif",
+    url: "/gif/shield.gif",
   },
   {
     title: "Settings",
     content:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, recusandae?",
-    url: "/src/assets/gif/settings-unscreen.gif",
+    url: "/gif/settings-unscreen.gif",
   },
 ];
 
