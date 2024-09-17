@@ -6,6 +6,12 @@ export const QUICK_LINKS = [
   { href: "#contact", label: "Contact" },
 ];
 
+export const CONTACT_INFO = [
+  { label: "Address", value: "123 Investment Street" },
+  { label: "Email", value: "info@reactwebsite.com" },
+  { label: "Phone", value: "(123) 456-7890" },
+];
+
 export const SOCIAL_ICONS = [
   {
     href: "#",

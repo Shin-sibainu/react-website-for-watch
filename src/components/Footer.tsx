@@ -1,7 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import FooterSection from "./layout/FooterSection";
-import { QUICK_LINKS, SOCIAL_ICONS } from "../data/footer";
+import { CONTACT_INFO, QUICK_LINKS, SOCIAL_ICONS } from "../data/footer";
 
 const Footer = () => {
   const ref = useRef(null);
@@ -46,9 +46,11 @@ const Footer = () => {
             title="Contact Us"
             className="w-full md:w-1/4 mb-6 md:mb-0"
           >
-            <p className="text-sm mb-1">123 Investment Street</p>
-            <p className="text-sm mb-1">Email: info@reactwebsite.com</p>
-            <p className="text-sm">Phone: (123) 456-7890</p>
+            {CONTACT_INFO.map((info, index) => (
+              <p key={index} className="text-sm mb-1">
+                {info.label}: {info.value}
+              </p>
+            ))}
           </FooterSection>
 
           <FooterSection title="Follow Us" className="w-full md:w-1/4">
